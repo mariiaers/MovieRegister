@@ -8,18 +8,23 @@ int main() {
     int indiceMenu = 0;
     int qtdFilmes = 0;
     int codigoFilme = 0; 
+    
+    //Entrada inicial com o tamanho da tabela de filmes
     printf("Entre com o tamanho da sua tabela: ");
     scanf("%d", &qtdFilmes);
     printf("\n");
 
     Filme** listafilme = (Filme**)malloc(qtdFilmes * sizeof(Filme*));
-
+    
+    //Adiciona filmes na tabela
     for (int i = 0; i < qtdFilmes; i++) {
         listafilme[i] = criar_filme();
     }
-
+    
+    //Imprime na tela a tabela de filmes
     print_tabela(listafilme, qtdFilmes);
-
+    
+    //Menu
     do {
         printf("\nMENU DE OPCOES\n\n");
         printf("1 - CADASTRAR DE NOVO TITULO\n");
@@ -37,7 +42,8 @@ int main() {
             print_tabela(listafilme, qtdFilmes);
             break;
         case 2:
-
+            
+            //Atualizar informações
             printf("\n");
             printf("1 - RENOMEAR TITULO\n");
             printf("2 - ATUALIZAR PRECO\n");
@@ -115,7 +121,7 @@ int main() {
         }
     } while (indiceMenu != 4);
 
-    // Free allocated memory
+    // Liberar memória alocada
     for (int i = 0; i < qtdFilmes; i++) {
         free(listafilme[i]->informacoes);
         free(listafilme[i]);
