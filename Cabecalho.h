@@ -1,4 +1,4 @@
-//File with all the functions that are going to be used in the project
+//Funções utilizadas no trabalho
 
 typedef struct info {
     char diretor[101]; //101 caracteres + 1 para fim de string
@@ -13,10 +13,10 @@ typedef struct filme{
     Info* informacoes; // Ponteiro para struct Info
 } Filme;
 
-//Function to create and return a simple pointer for the type movie
+//Função para criar um filme
 Filme* criar_filme();
 
-//function that deletes the movie and also free memory
+//Função que libera memória ao excluir um filme
 void free_filme(Filme* f);
 
 //função que imprime informações de um filme
