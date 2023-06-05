@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+//Função para criar um novo filme
 Filme* criar_filme(){
 
     Filme* actual = (Filme*)malloc(sizeof(Filme));
@@ -24,7 +25,7 @@ Filme* criar_filme(){
     return actual;
 }
 
-//function that deletes the movie and also free memory
+//Função para liberar memória ao deletar um filme
 void free_filme(Filme* f){
     free(f->informacoes);
     free(f);
@@ -59,7 +60,7 @@ void set_genero(Filme* f, char* novo){
     strcpy(f->informacoes->genero, novo);
 }
 
-//
+//Imprime na tela a tabela de filmes no formato do documento disponibilizado
 void print_tabela(Filme** tabela, int tam){
     int codigo = 1;
     printf("-------------TABELA DE FILMES-------------\n\n");
@@ -70,6 +71,7 @@ void print_tabela(Filme** tabela, int tam){
     }
 }
 
+//Deleta um filme
 void deletarFilme(Filme **listaFilmes, int *qtdFilmes, int indice) {
   
     if (indice < 0 || indice >= *qtdFilmes) {
