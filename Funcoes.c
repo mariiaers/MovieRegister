@@ -79,15 +79,12 @@ void deletarFilme(Filme **listaFilmes, int *qtdFilmes, int indice) {
         return;
     }
 
-    // Libera a memória do filme a ser excluído
     free(listaFilmes[indice]);
     
-    // Desloca os filmes à direita do índice para a esquerda
     for (int i = indice; i < *qtdFilmes - 1; i++) {
         listaFilmes[i] = listaFilmes[i + 1];
     }
 
-    // Atualiza a quantidade de filmes
     (*qtdFilmes)--;
 
     printf("Filme excluído com sucesso.\n");
